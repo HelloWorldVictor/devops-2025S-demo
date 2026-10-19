@@ -1,1 +1,16 @@
-
+name: Linting
+on: [push]
+jobs:
+    Linter:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+            - name: set up Python
+              uses: actions/setup-python@v7
+              with:
+                  python-version: "3.11"
+            - name: Install Dependencies
+              run: poetry install
+            - name: Lint code
+              run: ruff check .
