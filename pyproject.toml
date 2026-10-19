@@ -10,6 +10,10 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 
+[tool.poetry]
+# This is a Django app, not a library, so Poetry only installs its dependencies
+package-mode = false
+
 [tool.ruff]
 # Set the maximum line length to 88 (Black's default)
 line-length = 88
@@ -115,3 +119,8 @@ line-ending = "lf"
 
 # Set the line length limit for docstrings
 # docstring-code-line-length = 72
+
+[dependency-groups]
+dev = [
+    "ruff (>=0.17.1,<0.18.0)"
+]
