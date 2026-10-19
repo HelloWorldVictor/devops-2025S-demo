@@ -4,6 +4,8 @@
 import os
 import sys
 
+print("Hello world")
+
 
 def main():
     """Run administrative tasks."""
