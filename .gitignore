@@ -205,3 +205,10 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Terraform / secrets (Week 4 pre-class)
+*.tfstate*
+.terraform/
+*.tfvars
+*.pem
+*.key
