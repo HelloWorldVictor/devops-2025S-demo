@@ -45,8 +45,8 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: campus-notifier:dev
-          severity: HIGH,CRITICAL
-          exit-code: "0"            # warn for now; Drill 5 flips this
+          severity: CRITICAL
+          exit-code: "1"            # gate: a CRITICAL with a fix published fails the build
           format: table
 
   iac:
@@ -60,4 +60,4 @@ jobs:
           directory: .
           framework: terraform
           quiet: true
-          soft_fail: true           # warn for now; Drill 5 flips this to false
+          soft_fail: false          # gate: insecure terraform fails the build
